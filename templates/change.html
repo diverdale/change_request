@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% import '/bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+    <div class="container">
+        <div class="card border-warning" style="margin-top: 25px;">
+            <div class="card-header text-white bg-dark border-warning">
+                <h4>Hertz Change Control Form</h4>
+            </div>
+            <div class="card-body bg-light">
+                <form method="post" class="form_group">
+                    <div class="row">
+                        <div class="col">
+                            {{ form.change_type.label }}
+                            {{ form.change_type(class="form-control") }}
+                        </div>
+                        <div class="col">
+                            {{  form.title.label }}
+                            {{ form.title(class="form-control") }}
+                        </div>
+                        <div class="col">
+                            {{ form.swivel_desk.label }}
+                            {{ form.swivel_desk(class="form-control") }}
+                        </div>
+                    </div>
+                     <div class="row">
+                         <div class="col">
+                             {{ form.owner_name.label }}
+                             {{ form.owner_name(class="form-control") }}
+                         </div>
+                         <div class="col">
+                             {{ form.start_date.label }}
+                             {{ form.start_date(class="form-control") }}
+                         </div>
+                     </div>
+                     <div class="row">
+                         <div class="col">
+                             {{ form.vendor.label }}
+                             {{ form.vendor(class="form-control") }}
+                         </div>
+                         <div class="col">
+                             {{ form.end_date.label }}
+                             {{ form.end_date(class="form-control") }}
+                         </div>
+                     </div>
+                     <div class="row">
+                         <div class="col">
+                             {{ form.technical_contact_email.label }}
+                             {{ form.technical_contact_email(class="form-control") }}
+                         </div>
+                         <div class="col">
+
+                         </div>
+                     </div>
+                    <div class="row">
+                        <div class="col">
+                            {{ form.summary.label }}
+                            {{ form.summary(class="form-control") }}
+                        </div>
+                        <div class="col">
+                            {{ form.implementation_plan.label }}
+                            {{ form.implementation_plan(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            {{ form.rollback_plan.label }}
+                            {{ form.rollback_plan(class="form-control") }}
+                        </div>
+                        <div class="col">
+                            {{ form.test_plan.label }}
+                            {{ form.test_plan(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            {{ form.impact.label }}
+                            {{ form.impact(class="form-control") }}
+                        </div>
+                        <div class="col">
+                            {{ form.urgency.label }}
+                            {{ form.urgency(class="form-control") }}
+                        </div>
+                        <div class="col">
+                            {{ form.failure_probability.label }}
+                            {{ form.failure_probability(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            {{ form.network_impact_details.label }}
+                            {{ form.network_impact_details(class="form-control") }}
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            {{ form.justification.label }}
+                            {{ form.justification(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            {{ form.emails.label }}
+                            {{ form.emails(class="form-control") }}
+                        </div>
+                    </div>
+                    <br>
+                     <div class="row">
+                         <div class="col">
+                             {{ form.submit(class="btn btn-primary") }}
+                         </div>
+                     </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

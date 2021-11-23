@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <style>
+        td {border: 1px solid black;}
+    </style>
+<body style=background-color:#ffffff;>
+<H1>Change Request Info</H1><br>
+<table role=presentation style=border:1px >
+    <tr style=background-color:#FFFFE0>
+        <td><b>Date of Change</b></td>
+        <td><b>Title</b></td>
+        <td><b>Network Impact</b></td>
+        <td><b>Service Request</b></td>
+        <td><b>Hertz Change</b></td>
+    </tr>
+    {%  for change in changes %}
+    <tr>
+        <td>{{change.start_date}}</td>
+        <td>{{change.title}}</td>
+        <td>{{change.network_impact_details}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<body>
+    <h3>Change Control Activity:</h3>
+    {%  for change in changes %}
+    <p>{{ change.start_date }} -- {{ change.title }} -- {{ change.owner_name }} -- {{ change.network_impact_details}}</p>
+    {% endfor %}
+</body>
+</html>

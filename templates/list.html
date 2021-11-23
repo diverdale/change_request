@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Changes:</h3>
+    {%  for change in changes %}
+    <p>{{ change.title }} -- {{ change.owner_name }} -- {{ change.start_date }} -- {{ change.end_date }} -- {{ change.network_impact_details}}</p>
+    {% endfor %}
+</body>
+</html>
