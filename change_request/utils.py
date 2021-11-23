@@ -2,7 +2,7 @@ from flask_mail import Message
 from . import mail
 
 
-def test_mail(message):
+def send_mail(message):
     msg = Message("Change Request", sender="no-reply-flask@cisco.com",
                   recipients=["dalwrigh@cisco.com", "charleshenderson988@gmail.com"])
     msg.html = "<html>\

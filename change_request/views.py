@@ -1,7 +1,7 @@
 from flask import render_template, request, Blueprint, redirect, url_for
 from .models import ChangeControl
 from .forms import ChangeForm
-from .utils import test_mail
+from .utils import send_mail
 from . import db
 
 change_request = Blueprint('change_request', __name__)
@@ -50,6 +50,6 @@ def change():
                    'test_plan': form.test_plan.data, 'justification': form.justification.data}
         db.session.add(new_change)
         db.session.commit()
-        test_mail(message)
+        send_mail(message)
         return redirect(url_for('change_request.list_all'))
     return render_template('change.html', form=form)
