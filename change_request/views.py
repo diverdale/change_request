@@ -50,6 +50,6 @@ def change():
                    'test_plan': form.test_plan.data, 'justification': form.justification.data}
         db.session.add(new_change)
         db.session.commit()
-        send_mail(message)
+        # send_mail(message)
         return redirect(url_for('change_request.list_all'))
     return render_template('change.html', form=form)

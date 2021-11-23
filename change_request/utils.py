@@ -4,7 +4,7 @@ from . import mail
 
 def send_mail(message):
     msg = Message("Change Request", sender="no-reply-flask@cisco.com",
-                  recipients=["dalwrigh@cisco.com", "charleshenderson988@gmail.com"])
+                  recipients=["dalwrigh@cisco.com"])
     msg.html = "<html>\
                 <head>\
                     <style>\
