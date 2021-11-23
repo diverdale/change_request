@@ -1,6 +1,7 @@
 from flask import render_template, request, Blueprint, redirect, url_for
 from .models import ChangeControl
 from .forms import ChangeForm
+from .utils import test_mail
 from . import db
 
 change_request = Blueprint('change_request', __name__)
@@ -43,12 +44,12 @@ def change():
                                    network_impact_details=form.network_impact_details.data,
                                    justification=form.justification.data,
                                    emails=form.emails.data)
-        # message = {'change_type': form.change_type.data, 'title': form.title.data, 'owner_name': form.owner_name.data,
-        #           'swivel_desk': form.swivel_desk.data, 'technical_contact_email': form.technical_contact_email.data,
-        #           'implementation_plan': form.implementation_plan.data, 'rollback_plan': form.rollback_plan.data,
-        #           'test_plan': form.test_plan.data, 'justification': form.justification.data}
+        message = {'change_type': form.change_type.data, 'title': form.title.data, 'owner_name': form.owner_name.data,
+                   'swivel_desk': form.swivel_desk.data, 'technical_contact_email': form.technical_contact_email.data,
+                   'implementation_plan': form.implementation_plan.data, 'rollback_plan': form.rollback_plan.data,
+                   'test_plan': form.test_plan.data, 'justification': form.justification.data}
         db.session.add(new_change)
         db.session.commit()
-        # test_mail(message)
+        test_mail(message)
         return redirect(url_for('change_request.list_all'))
     return render_template('change.html', form=form)
