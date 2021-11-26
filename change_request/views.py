@@ -5,6 +5,7 @@ from .utils import send_mail
 from . import db
 
 change_request = Blueprint('change_request', __name__)
+api = Blueprint('api', __name__)
 
 
 @change_request.route('/')
@@ -53,3 +54,9 @@ def change():
         # send_mail(message)
         return redirect(url_for('change_request.list_all'))
     return render_template('change.html', form=form)
+
+
+@api.route('/get')
+def get():
+    get_dict = {'foo': 'bar'}
+    return get_dict
